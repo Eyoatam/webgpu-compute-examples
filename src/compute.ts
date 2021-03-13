@@ -25,9 +25,9 @@ gpuBufferFirstMatrix.unmap();
 
 // deno-fmt-ignore
 const secondMatrix = new Float32Array([
-  4, 2, 
-  1, 2, 
-  3, 4, 
+  4, 2,
+  1, 2,
+  3, 4,
   5, 6,
   7, 8
 ])
@@ -97,4 +97,23 @@ const bindGroup = device.createBindGroup({
       },
     },
   ],
+});
+
+/**
+ * @todo add wgsl shader code
+ */
+
+const computeShader = `
+`;
+
+const computePipeline = device.createComputePipeline({
+  layout: device.createPipelineLayout({
+    bindGroupLayouts: [bindGroupLayout],
+  }),
+  compute: {
+    module: device.createShaderModule({
+      code: computeShader,
+    }),
+    entryPoint: "main",
+  },
 });

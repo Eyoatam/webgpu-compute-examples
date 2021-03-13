@@ -1,6 +1,5 @@
 {
   "deno.enable": true,
   "deno.lint": true,
-  "deno.unstable": true,
-  "git.ignoreLimitWarning": true
+  "deno.unstable": true
 }
